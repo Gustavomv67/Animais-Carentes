@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Animais_Carentes.Models;
 
 namespace Animais_Carentes.Controllers
 {
     public class HomeController : Controller
     {
+        private contexto db = new contexto();
         public ActionResult Index()
+
         {
-            return View();
+            return View(db.OngModels.ToList());
         }
 
         public ActionResult About()
