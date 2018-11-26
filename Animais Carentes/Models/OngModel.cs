@@ -58,6 +58,8 @@ namespace Animais_Carentes.Models
         [Required(ErrorMessage = "Informe a senha da sua ONG")]
         public string senha { get; set; }
 
-
+        [DisplayName("Data cadastro")]
+        [DataType(DataType.Date)]
+        public DateTime cadastro { get; set; }
     }
 }

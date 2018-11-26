@@ -1,0 +1,49 @@
+﻿@model Animais_Carentes.Models.AnimalModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="text-center">Criar Ong</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-3 "></div>
+            <div class="col-md-3 ">
+                @Html.LabelFor(model => model.especie, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.especie, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.especie, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.raca, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.raca, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.raca, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3 "></div>
+            <div class="col-md-3 ">
+                @Html.LabelFor(model => model.descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.descricao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.descricao, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-offset-2">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

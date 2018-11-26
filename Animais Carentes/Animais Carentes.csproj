@@ -149,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AgendamentoController.cs" />
+    <Compile Include="Controllers\AnimalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OngController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -175,10 +176,28 @@
     <Compile Include="Migrations\201810081851425_melhorando_agendamento1.Designer.cs">
       <DependentUpon>201810081851425_melhorando_agendamento1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811161811200_novas tabelas.cs" />
+    <Compile Include="Migrations\201811161811200_novas tabelas.Designer.cs">
+      <DependentUpon>201811161811200_novas tabelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811161908362_consertando tabelas.cs" />
+    <Compile Include="Migrations\201811161908362_consertando tabelas.Designer.cs">
+      <DependentUpon>201811161908362_consertando tabelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811161910558_consertando animal.cs" />
+    <Compile Include="Migrations\201811161910558_consertando animal.Designer.cs">
+      <DependentUpon>201811161910558_consertando animal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811260250270_cadastro ong.cs" />
+    <Compile Include="Migrations\201811260250270_cadastro ong.Designer.cs">
+      <DependentUpon>201811260250270_cadastro ong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgendamentoModel.cs" />
+    <Compile Include="Models\AnimalModel.cs" />
     <Compile Include="Models\contexto.cs" />
     <Compile Include="Models\OngModel.cs" />
+    <Compile Include="Models\SocioModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -1809,6 +1828,11 @@
     <Content Include="Views\Agendamento\Details.cshtml" />
     <Content Include="Views\Agendamento\Edit.cshtml" />
     <Content Include="Views\Agendamento\Index.cshtml" />
+    <Content Include="Views\Animal\Create.cshtml" />
+    <Content Include="Views\Animal\Delete.cshtml" />
+    <Content Include="Views\Animal\Details.cshtml" />
+    <Content Include="Views\Animal\Edit.cshtml" />
+    <Content Include="Views\Animal\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1842,6 +1866,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810081851425_melhorando_agendamento1.resx">
       <DependentUpon>201810081851425_melhorando_agendamento1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811161811200_novas tabelas.resx">
+      <DependentUpon>201811161811200_novas tabelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811161908362_consertando tabelas.resx">
+      <DependentUpon>201811161908362_consertando tabelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811161910558_consertando animal.resx">
+      <DependentUpon>201811161910558_consertando animal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811260250270_cadastro ong.resx">
+      <DependentUpon>201811260250270_cadastro ong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Animais_Carentes.Migrations.InitialCreate.resources" />
   </ItemGroup>

@@ -8,6 +8,34 @@
         <div class="wrap">
             <div class="content-top">
                 <div class="section group">
+                    @if (Model.Any(A => A.cadastro >= DateTime.Now.AddDays(-5)))
+                    {
+                        var novasONgs = Model.Where(A => A.cadastro >= DateTime.Now.AddDays(-5)).ToList();
+                        <h4>Há novas ONGS</h4>
+                        foreach (var item in novasONgs)
+                        {
+                            <div class="col_1_of_3 span_1_of_3">
+                                <div class="grid_4">
+                                    <div class="box-1">
+                                        <img src="~/Content/web/images/pic5.jpg" alt="" class="wrapper">
+                                        <div class="inside">
+                                            <h2 class="v1">@item.nome</h2>
+                                            <p class="desc">Telefone: @item.telefone</p>
+                                            <p class="desc">Email: @item.email</p>
+                                            <p class="desc">Endereco: @item.bairro, @item.rua - @item.numero</p>
+                                            <a href="~/Ong/Details/@item.cnpj"><div class="clearfix"><span class="box-btn"></span></div></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="clear"></div>
+                        <br>
+                        <br>
+                        <br>
+
+                    }
+                    <h4>ONGS</h4>
                     @foreach (var item in Model)
                     {
                         <div class="col_1_of_3 span_1_of_3">
@@ -45,15 +73,15 @@
             </div>
         </div>
         <script>
-                $("#slideshow > div:gt(0)").hide();
-                setInterval(function () {
-                    $('#slideshow > div:first')
-                        .fadeOut(00)
-                        .next()
-                        .fadeIn(500)
-                        .end()
-                        .appendTo('#slideshow');
-                }, 2000);
+            $("#slideshow > div:gt(0)").hide();
+            setInterval(function () {
+                $('#slideshow > div:first')
+                    .fadeOut(00)
+                    .next()
+                    .fadeIn(500)
+                    .end()
+                    .appendTo('#slideshow');
+            }, 2000);
         </script>
     </div>
 </div>

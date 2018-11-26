@@ -24,5 +24,10 @@ namespace Animais_Carentes.Models
         public System.Data.Entity.DbSet<Animais_Carentes.Models.OngModel> OngModels { get; set; }
 
         public System.Data.Entity.DbSet<Animais_Carentes.Models.AgendamentoModel> AgendamentoModels { get; set; }
+
+        public System.Data.Entity.DbSet<Animais_Carentes.Models.AnimalModel> AnimalModels { get; set; }
+
+        public System.Data.Entity.DbSet<Animais_Carentes.Models.SocioModel> SocioModels { get; set; }
+
     }
 }

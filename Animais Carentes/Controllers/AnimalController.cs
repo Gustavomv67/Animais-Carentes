@@ -10,108 +10,107 @@ using Animais_Carentes.Models;
 
 namespace Animais_Carentes.Controllers
 {
-    public class OngController : Controller
+    public class AnimalController : Controller
     {
         private contexto db = new contexto();
 
-        // GET: Ong
+        // GET: Animal
         public ActionResult Index()
         {
-            return View(db.OngModels.ToList());
+            return View(db.AnimalModels.ToList());
         }
 
-        // GET: Ong/Details/5
-        public ActionResult Details(string id)
+        // GET: Animal/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OngModel ongModel = db.OngModels.Find(id);
-            if (ongModel == null)
+            AnimalModel animalModel = db.AnimalModels.Find(id);
+            if (animalModel == null)
             {
                 return HttpNotFound();
             }
-            return View(ongModel);
+            return View(animalModel);
         }
 
-        // GET: Ong/Create
+        // GET: Animal/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Ong/Create
+        // POST: Animal/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cnpj,nome,cep,estado,cidade,bairro,rua,numero,telefone,email,senha")] OngModel ongModel)
+        public ActionResult Create([Bind(Include = "id,especie,raca,descricao")] AnimalModel animalModel)
         {
             if (ModelState.IsValid)
             {
-                ongModel.cadastro = DateTime.Now;
-                db.OngModels.Add(ongModel);
+                db.AnimalModels.Add(animalModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(ongModel);
+            return View(animalModel);
         }
 
-        // GET: Ong/Edit/5
-        public ActionResult Edit(string id)
+        // GET: Animal/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OngModel ongModel = db.OngModels.Find(id);
-            if (ongModel == null)
+            AnimalModel animalModel = db.AnimalModels.Find(id);
+            if (animalModel == null)
             {
                 return HttpNotFound();
             }
-            return View(ongModel);
+            return View(animalModel);
         }
 
-        // POST: Ong/Edit/5
+        // POST: Animal/Edit/5
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cnpj,nome,cep,estado,cidade,bairro,rua,numero,telefone,email,senha")] OngModel ongModel)
+        public ActionResult Edit([Bind(Include = "id,especie,raca,descricao")] AnimalModel animalModel)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(ongModel).State = EntityState.Modified;
+                db.Entry(animalModel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(ongModel);
+            return View(animalModel);
         }
 
-        // GET: Ong/Delete/5
-        public ActionResult Delete(string id)
+        // GET: Animal/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            OngModel ongModel = db.OngModels.Find(id);
-            if (ongModel == null)
+            AnimalModel animalModel = db.AnimalModels.Find(id);
+            if (animalModel == null)
             {
                 return HttpNotFound();
             }
-            return View(ongModel);
+            return View(animalModel);
         }
 
-        // POST: Ong/Delete/5
+        // POST: Animal/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            OngModel ongModel = db.OngModels.Find(id);
-            db.OngModels.Remove(ongModel);
+            AnimalModel animalModel = db.AnimalModels.Find(id);
+            db.AnimalModels.Remove(animalModel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

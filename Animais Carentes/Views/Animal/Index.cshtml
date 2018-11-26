@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Animais_Carentes.Models.AnimalModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Exposição Animais</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="main">
+    <div class="top-box">
+        <div class="wrap">
+            <div class="content-top">
+                <div class="section group">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col_1_of_3 span_1_of_3">
+                            <div class="grid_4">
+                                <div class="box-1">
+                                    <img src="~/Content/web/images/pic5.jpg" alt="" class="wrapper">
+                                    <div class="inside">
+                                        <h2 class="v1">@item.especie</h2>
+                                        <p class="desc">Raça: @item.raca</p>
+                                        <p class="desc">Descrição: @item.descricao</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
